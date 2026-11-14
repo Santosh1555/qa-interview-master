@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#101827">
+  <meta name="description" content="Offline-first QA interview preparation app">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <title>QA Interview Master</title>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><div class="brand-icon">QA</div><div><strong>Interview Master</strong><small>Prepare smarter. Interview stronger.</small></div></div>
+  <button id="installBtn" class="install hidden">Install app</button>
+</header>
+<main>
+  <section class="hero">
+    <div><span class="eyebrow">YOUR PERSONAL PREP SPACE</span><h1>Ready for your next<br><em>QA interview?</em></h1>
+    <p>Learn, practise and track your progress — even without internet.</p></div>
+    <div class="hero-badge"><span>4+</span><small>years QA<br>experience track</small></div>
+  </section>
+  <section class="stats">
+    <div class="stat"><b id="completedCount">0</b><span>Completed</span></div>
+    <div class="stat"><b id="savedCount">0</b><span>Bookmarked</span></div>
+    <div class="stat"><b id="progressPct">0%</b><span>Progress</span></div>
+  </section>
+  <section class="section-head"><div><span class="eyebrow">LEARNING LIBRARY</span><h2>Choose a topic</h2></div><span class="offline-pill"><i></i> Offline ready</span></section>
+  <div id="categories" class="categories"></div>
+  <section class="practice-panel">
+    <div class="section-head"><div><span class="eyebrow">PRACTISE</span><h2>Question bank</h2></div><span id="questionCount" class="muted"></span></div>
+    <div class="toolbar">
+      <input id="searchInput" type="search" placeholder="Search questions or topics…">
+      <select id="topicFilter" aria-label="Filter topic"><option value="All">All topics</option></select>
+      <select id="statusFilter" aria-label="Filter status"><option value="All">All status</option><option value="Pending">Need practice</option><option value="Completed">Completed</option><option value="Bookmarked">Bookmarked</option></select>
+    </div>
+    <div id="questionList" class="question-list"></div>
+  </section>
+  <section class="notes-panel">
+    <div class="section-head"><div><span class="eyebrow">YOUR REVISION NOTES</span><h2>Quick notes</h2></div><span class="muted">Saved on this device</span></div>
+    <textarea id="notes" placeholder="Write concepts to revise, interview feedback, or questions you want to revisit…"></textarea>
+    <div class="note-foot"><span id="saveStatus">Notes save automatically on this device.</span><button id="clearNotes" class="text-btn">Clear notes</button></div>
+  </section>
+  <footer><b>QA Interview Master</b><span>Offline-first • Your data stays in this browser</span></footer>
+</main>
+<div id="detailModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
+  <div class="modal-card"><button id="closeModal" class="close" aria-label="Close">×</button><span id="detailTopic" class="eyebrow"></span><h2 id="detailTitle"></h2><div id="detailAnswer" class="answer"></div><div class="modal-actions"><button id="bookmarkBtn" class="secondary">☆ Bookmark</button><button id="completeBtn" class="primary">Mark completed</button></div></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
